@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# Environment files
+.env
+.env.example
+
+# Git files
+.git/
+!.gitignore
+
+
+# Package-lock file
+package-lock.json
+
+services/brevo_test.js
+
+tsconfig.json
+*.ts
+*.zip
+.env
