@@ -194,16 +194,19 @@ export default function GamificationPage() {
               <Button variant="outline" size="sm" asChild className="bg-white/80">
                 <Link href="/dashboard">
                   <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Dashboard
                 </Link>
               </Button>
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
                   <Trophy className="w-7 h-7 text-white" />
                 </div>
-                <div>
-                  <h1 className="text-2xl font-bold text-gray-900">Gamification Hub</h1>
-                  <p className="text-gray-600">Earn rewards for smart financial habits</p>
+                <div className="flex flex-col">
+                  <h1 className="text-2xl font-bold text-gray-900 leading-tight sm:text-2xl text-lg">
+                  Gamification Hub
+                  </h1>
+                  <p className="text-gray-600 text-sm sm:text-base">
+                  Earn rewards for smart financial habits
+                  </p>
                 </div>
               </div>
             </div>

@@ -142,7 +142,6 @@ export default function ChatPage() {
               <Button variant="outline" size="sm" asChild className="bg-white/80">
                 <Link href="/dashboard">
                   <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back
                 </Link>
               </Button>
               <div className="flex items-center gap-3">

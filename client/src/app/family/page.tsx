@@ -181,32 +181,36 @@ export default function FamilyPage() {
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b shadow-sm">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-between gap-4 md:gap-0">
+            <div className="flex items-center gap-4 flex-1 min-w-0">
               <Button variant="outline" size="sm" asChild className="bg-white/80">
-                <Link href="/dashboard">
+                <Link href="/dashboard" className="flex items-center gap-1 text-sm md:text-base">
                   <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Dashboard
                 </Link>
               </Button>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 min-w-0">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
                   <Users className="w-7 h-7 text-white" />
                 </div>
-                <div>
-                  <h1 className="text-2xl font-bold text-gray-900">Family Finance</h1>
-                  <p className="text-gray-600">Manage shared expenses and budgets</p>
+                <div className="truncate">
+                  <h1 className="text-xl md:text-2xl font-bold text-gray-900 truncate">Family Finance</h1>
+                  {/* <p className="text-gray-600">Manage shared expenses and budgets</p> */}
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <Badge variant="outline" className="text-blue-700 border-blue-300 bg-blue-50 px-3 py-1">
+            <div className="flex items-center gap-2 mt-4 md:mt-0 flex-shrink-0 w-full md:w-auto justify-end">
+              <Badge
+                variant="outline"
+                className="text-blue-700 border-blue-300 bg-blue-50 px-2 py-1 flex items-center text-xs md:text-sm"
+              >
                 <Users className="w-3 h-3 mr-1" />
-                {familyMembers.length} Members
+                <span className="hidden xs:inline">{familyMembers.length} Members</span>
+                <span className="inline xs:hidden">{familyMembers.length}</span>
               </Badge>
-              <Button className="bg-gradient-to-r from-blue-600 to-purple-600">
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 whitespace-nowrap">
                 <UserPlus className="w-4 h-4 mr-2" />
-                Invite Member
+                <span className="hidden sm:inline">Invite Member</span>
+                <span className="inline sm:hidden">Invite</span>
               </Button>
             </div>
           </div>

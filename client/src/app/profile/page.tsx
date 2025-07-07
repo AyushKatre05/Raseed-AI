@@ -80,7 +80,7 @@ export default function ProfilePage() {
               <Button variant="outline" size="sm" asChild className="bg-white/80">
                 <Link href="/dashboard">
                   <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Dashboard
+                  
                 </Link>
               </Button>
               <div className="flex items-center gap-3">
@@ -91,7 +91,7 @@ export default function ProfilePage() {
                   <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                     My Profile
                   </h1>
-                  <p className="text-gray-600 text-lg">Manage your account and preferences</p>
+                  <p className="text-gray-600 text-lg">Manage your account</p>
                 </div>
               </div>
             </div>

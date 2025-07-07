@@ -228,7 +228,7 @@ export default function ReceiptsPage() {
             {filteredReceipts.map((receipt) => (
               <Card key={receipt.id} className="hover:shadow-md transition-shadow">
                 <CardContent className="p-6">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                     <div className="flex items-center gap-4">
                       <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
                         <Receipt className="w-8 h-8 text-gray-400" />
