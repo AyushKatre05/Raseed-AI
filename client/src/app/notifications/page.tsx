@@ -35,6 +35,17 @@ export default function NotificationsPage() {
     },
     {
       id: 2,
+      type: "suggestion",
+      title: "💡 Suggestion from Raseed Agent",
+      message: "Based on your recent grocery receipts, you could save up to ₹2,000/month by switching to store brands for staples like rice and oil. Want a comparison chart?",
+      timestamp: "2025-01-14T10:00:00",
+      read: false,
+      priority: "medium",
+      icon: TrendingUp,
+      color: "text-blue-700 bg-blue-50 border-blue-200",
+    },
+    {
+      id: 3,
       type: "achievement",
       title: "Great Job! Dining Savings",
       message: "You've reduced restaurant spending by 8% this month, saving ₹5,200! Keep up the good work.",
@@ -45,7 +56,7 @@ export default function NotificationsPage() {
       color: "text-green-600 bg-green-50 border-green-200",
     },
     {
-      id: 3,
+      id: 4,
       type: "wallet",
       title: "New Wallet Pass Created",
       message: "Receipt from Big Bazaar (₹12,745) has been added to your Google Wallet.",
@@ -56,7 +67,7 @@ export default function NotificationsPage() {
       color: "text-blue-600 bg-blue-50 border-blue-200",
     },
     {
-      id: 4,
+      id: 5,
       type: "insight",
       title: "Spending Pattern Alert",
       message: "Your shopping expenses increased by 23% this month. AI suggests reviewing recent purchases.",
@@ -67,7 +78,7 @@ export default function NotificationsPage() {
       color: "text-orange-600 bg-orange-50 border-orange-200",
     },
     {
-      id: 5,
+      id: 6,
       type: "goal",
       title: "Monthly Goal Update",
       message: "You're 94.9% through your monthly budget with 16 days remaining. Stay mindful of spending.",
@@ -76,7 +87,9 @@ export default function NotificationsPage() {
       priority: "medium",
       icon: Target,
       color: "text-purple-600 bg-purple-50 border-purple-200",
-    },
+    }
+
+    
   ])
 
   const markAsRead = (id: number) => {
@@ -156,7 +169,7 @@ export default function NotificationsPage() {
 
       <div className="container mx-auto px-2 py-8 max-w-4xl">
         <Tabs defaultValue="all" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-6 bg-white/80 backdrop-blur-sm shadow-lg">
+          <TabsList className="grid w-full grid-cols-7 bg-white/80 backdrop-blur-sm shadow-lg">
             <TabsTrigger
               value="all"
               className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-purple-500 data-[state=active]:text-white"
@@ -192,6 +205,12 @@ export default function NotificationsPage() {
               className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white"
             >
               Goals
+            </TabsTrigger>
+            <TabsTrigger
+              value="suggestion"
+              className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-700 data-[state=active]:to-green-600 data-[state=active]:text-white"
+            >
+              Suggestions
             </TabsTrigger>
           </TabsList>
 
@@ -258,7 +277,6 @@ export default function NotificationsPage() {
                               </Button>
                             </div>
                           </div>
-
                           <div className="flex items-center justify-between">
                             <div className="text-sm text-gray-500">
                               {new Date(notification.timestamp).toLocaleString()}
@@ -284,6 +302,42 @@ export default function NotificationsPage() {
               )}
             </TabsContent>
           ))}
+
+          {/* Suggestions Tab: Only show suggestion-type notifications */}
+          <TabsContent value="suggestion" className="space-y-4">
+            {getNotificationsByType("suggestion").length === 0 ? (
+              <Card className="bg-white/80 backdrop-blur-sm shadow-lg border-0">
+                <CardContent className="p-12 text-center">
+                  <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <TrendingUp className="w-8 h-8 text-blue-400" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">No suggestions</h3>
+                  <p className="text-gray-600">No personalized suggestions at the moment.</p>
+                </CardContent>
+              </Card>
+            ) : (
+              getNotificationsByType("suggestion").map((notification) => (
+                <Card
+                  key={notification.id}
+                  className={`bg-white/80 backdrop-blur-sm shadow-lg border-0 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ${
+                    !notification.read ? "ring-2 ring-blue-200" : ""
+                  }`}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${notification.color}`}>
+                        <notification.icon className="w-6 h-6" />
+                      </div>
+                      <div className="flex-1 space-y-2">
+                        <h3 className="font-semibold text-gray-900">{notification.title}</h3>
+                        <p className="text-gray-700 leading-relaxed mt-1">{notification.message}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))
+            )}
+          </TabsContent>
         </Tabs>
       </div>
     </div>
