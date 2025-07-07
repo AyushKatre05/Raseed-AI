@@ -1,3 +1,16 @@
+# Receipt Management for Google Wallet
+
+## The Challenge
+Google Wallet provides fast, secure access to everyday essentials, but managing physical receipts is still cumbersome. Users often lose records, struggle to track expenses, and miss out on leveraging purchase data for personal benefit. There is a clear need for a seamless way to digitize, organize, and utilize receipt information directly within Google Wallet, enabling users to gain valuable insights into their spending habits and optimize their financial management.
+
+## The Objective
+Build "Project Raseed," an AI-powered personal assistant that acts as a comprehensive receipt manager and financial advisor for everyday users. This assistant provides actionable intelligence, enabling users to easily track expenses, gain insights into spending, and identify opportunities for savings—all tightly integrated with Google Wallet.
+
+### Key Capabilities
+- **Multimodal Receipt Ingestion and Analysis**: Accepts photos, videos, or live streams of receipts in any language. Uses Gemini’s multimodal AI to analyze media, extract items, values, taxes, and fees, and stores this information. Passes are generated for Google Wallet, with detailed items and links back to the assistant for more info.
+- **Local Language Query and Pass Generation**: Users can ask questions or make requests in their local language (e.g., "What can I cook with the food I bought last week?"). The agent, built with Vertex AI Agent Builder, responds and can generate Google Wallet passes (e.g., shopping lists) with actionable details.
+- **Spending Analysis and Savings Suggestions**: The agent answers queries about spending (e.g., "How much did I spend on groceries last month?") using Gemini to analyze trends and suggest savings. Insights are shared as updatable passes in Google Wallet, and push notifications are sent for important changes.
+- **Seamless Google Wallet API Integration**: Direct integration with the Google Wallet API to programmatically create, update, and push customized passes to the user's wallet.
 # Raseed – AI-Powered Receipt Management & Financial Assistant
 
 ## Overview
@@ -71,8 +84,9 @@ Raseed is a next-generation, AI-powered platform for managing receipts, analyzin
 ## 🛠 Tech Stack
 - **Frontend**: Next.js (App Router), React, TypeScript, Tailwind CSS, Lucide React
 - **Backend**: Firebase (Firestore, Storage, Functions, Analytics), Google Cloud Functions
-- **AI/ML**: Gemini (multimodal), Vertex AI, Genkit, Vertex Vector DB
-- **Wallet Integration**: Google Wallet API (JWT-based pass generation)
+- **AI/ML**: Google Gemini (multimodal), Vertex AI, Vertex AI Agent Builder, Genkit, Vertex Vector DB
+- **Wallet Integration**: Google Wallet API (JWT-based pass generation, push notifications, pass management)
+- **Other Google Tech**: Google Cloud Platform, Google Identity, Google Analytics
 - **Other**: React Dropzone, Custom UI Components, Charting Libraries
 
 ---
