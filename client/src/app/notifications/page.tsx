@@ -103,12 +103,11 @@ export default function NotificationsPage() {
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b shadow-sm">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-4 w-full sm:w-auto">
               <Button variant="outline" size="sm" asChild className="bg-white/80">
                 <Link href="/dashboard">
                   <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Dashboard
                 </Link>
               </Button>
               <div className="flex items-center gap-3">
@@ -116,14 +115,14 @@ export default function NotificationsPage() {
                   <Bell className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     Notifications
                   </h1>
-                  <p className="text-gray-600 text-lg">Stay updated with your financial insights</p>
+                  <p className="text-gray-600 text-base sm:text-lg">Stay updated with your financial insights</p>
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto">
               {unreadCount > 0 && (
                 <Badge variant="destructive" className="bg-red-100 text-red-800 border-red-200">
                   {unreadCount} unread
@@ -136,7 +135,8 @@ export default function NotificationsPage() {
                 className="bg-white/80 hover:bg-blue-50 border-blue-200 text-blue-700"
               >
                 <MarkAsRead className="w-4 h-4 mr-2" />
-                Mark All Read
+                <span className="hidden xs:inline">Mark All Read</span>
+                <span className="inline xs:hidden">Mark All</span>
               </Button>
               <Button
                 variant="outline"
@@ -146,7 +146,7 @@ export default function NotificationsPage() {
               >
                 <Link href="/settings">
                   <Settings className="w-4 h-4 mr-2" />
-                  Settings
+                  <span className="hidden xs:inline">Settings</span>
                 </Link>
               </Button>
             </div>
@@ -154,7 +154,7 @@ export default function NotificationsPage() {
         </div>
       </header>
 
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <div className="container mx-auto px-2 py-8 max-w-4xl">
         <Tabs defaultValue="all" className="space-y-6">
           <TabsList className="grid w-full grid-cols-6 bg-white/80 backdrop-blur-sm shadow-lg">
             <TabsTrigger

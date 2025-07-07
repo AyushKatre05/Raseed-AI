@@ -89,15 +89,7 @@ export default function DashboardPage() {
               </h1>
               <p className="text-gray-600 text-lg">Your financial insights at a glance</p>
             </div>
-            <div className="flex items-center gap-3">
-              <Button
-                variant="outline"
-                size="sm"
-                className="bg-white/80 hover:bg-blue-50 border-blue-200 text-blue-700"
-              >
-                <Filter className="w-4 h-4 mr-2" />
-                Filter
-              </Button>
+            <div className="flex items-center gap-2">
               <Button
                 variant="outline"
                 size="sm"

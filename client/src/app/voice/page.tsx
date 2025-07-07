@@ -167,8 +167,7 @@ export default function VoicePage() {
             <div className="flex items-center gap-4">
               <Button variant="outline" size="sm" asChild className="bg-white/80">
                 <Link href="/dashboard">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back
+                  <ArrowLeft className="w-4 h-4" />
                 </Link>
               </Button>
               <div className="flex items-center gap-3">
@@ -176,7 +175,7 @@ export default function VoicePage() {
                   <Mic className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-gray-900">Voice Commands</h1>
+                  <h1 className="text-xl font-bold text-gray-900">Voice Commands</h1>
                   <p className="text-gray-600">Talk to manage your receipts and finances</p>
                 </div>
               </div>

@@ -20,6 +20,7 @@ import {
   AlertTriangle,
   Wallet,
   ChefHat,
+Utensils
 } from "lucide-react"
 import Link from "next/link"
 
@@ -157,13 +158,12 @@ export default function SmartRecommendationsPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b shadow-sm">
-        <div className="container mx-auto px-4 py-4">
+      <div className="px-4 py-6 sm:px-6 md:px-8 max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Button variant="outline" size="sm" asChild className="bg-white/80">
                 <Link href="/dashboard">
                   <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back to Dashboard
                 </Link>
               </Button>
               <div className="flex items-center gap-3">
@@ -171,7 +171,7 @@ export default function SmartRecommendationsPage() {
                   <Brain className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-gray-900">Smart Recommendations</h1>
+                  <h1 className="text-xl font-bold text-gray-900">Smart Recommendations</h1>
                   <p className="text-gray-600">AI-powered insights to optimize your spending</p>
                 </div>
               </div>
