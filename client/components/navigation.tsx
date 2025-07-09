@@ -190,7 +190,7 @@ export function Navigation() {
                   <Target className="w-4 h-4 text-blue-600" />
                 </div>
                 <div>
-                  <div className="font-medium text-sm text-gray-900">Setup Guide</div>
+                  <div className="font-medium text-sm text-gray-900">Personalized Setup/Update</div>
                   <div className="text-xs text-gray-500">Get started quickly</div>
                 </div>
               </Link>

@@ -6,7 +6,51 @@ import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Sparkles, User, Bell, Zap } from "lucide-react"
+import { User, Bell, Zap, Sparkles } from "lucide-react"
+// Custom SVG logo for Raseed (AI Wallet theme)
+// Improved modern AI wallet logo for Raseed
+function RaseedLogo({ className = "w-12 h-12" }) {
+  // Refined: Bolder wallet shape, richer gradients, card peeking out, prominent R clasp, digital accent
+  return (
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* Card peeking out of wallet */}
+      <rect x="13" y="10" width="22" height="8" rx="2.5" fill="url(#cardGradient)" stroke="#6366f1" strokeWidth="1.2" />
+      {/* Wallet body with bold outline and rich gradient */}
+      <rect x="7" y="15" width="34" height="18" rx="6" fill="url(#walletBodyRich)" stroke="#6366f1" strokeWidth="2.5" />
+      {/* Wallet flap with shadow and highlight */}
+      <rect x="11" y="8" width="26" height="9" rx="4.5" fill="url(#walletFlapRich)" stroke="#a21caf" strokeWidth="1.7" />
+      {/* Stylized R as wallet clasp, more prominent */}
+      <g filter="url(#rShadow)">
+        <path d="M23.5 20c0-1.1 1-2 2.2-2h2.1c1.1 0 2 .9 2 2s-.9 2-2 2h-2.1v2.1" stroke="#a21caf" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <circle cx="27.5" cy="20" r="1.2" fill="#6366f1" />
+      </g>
+      {/* Digital/AI accent: circuit lines and nodes */}
+      <path d="M16 29h16" stroke="#818cf8" strokeWidth="1.3" strokeLinecap="round" />
+      <circle cx="16" cy="29" r="1.1" fill="#a5b4fc" />
+      <circle cx="32" cy="29" r="1.1" fill="#a5b4fc" />
+      {/* Soft shadow/glow under wallet */}
+      <ellipse cx="24" cy="37.5" rx="12" ry="3.2" fill="#6366f1" fillOpacity="0.13" />
+      <defs>
+        <linearGradient id="walletBodyRich" x1="7" y1="15" x2="41" y2="33" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#e0e7ef" />
+          <stop offset="0.5" stopColor="#c7d2fe" />
+          <stop offset="1" stopColor="#a5b4fc" />
+        </linearGradient>
+        <linearGradient id="walletFlapRich" x1="11" y1="8" x2="37" y2="17" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#a21caf" />
+          <stop offset="1" stopColor="#6366f1" />
+        </linearGradient>
+        <linearGradient id="cardGradient" x1="13" y1="10" x2="35" y2="18" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#f3f4f6" />
+          <stop offset="1" stopColor="#c7d2fe" />
+        </linearGradient>
+        <filter id="rShadow" x="20" y="16" width="12" height="10" filterUnits="userSpaceOnUse">
+          <feDropShadow dx="0" dy="1" stdDeviation="0.7" floodColor="#a21caf" floodOpacity="0.18" />
+        </filter>
+      </defs>
+    </svg>
+  )
+}
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
@@ -45,12 +89,7 @@ export default function ClientLayout({
               {/* Logo Section */}
               <Link href="/" className="flex items-center gap-4 group">
                 <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                    <Sparkles className="w-7 h-7 text-white animate-pulse" />
-                  </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-bounce">
-                    <div className="w-2 h-2 bg-white rounded-full absolute top-1 left-1"></div>
-                  </div>
+                  <RaseedLogo className="w-12 h-12 drop-shadow-lg group-hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="hidden sm:block">
                   <div className="flex items-center gap-2">
@@ -58,10 +97,10 @@ export default function ClientLayout({
                       Raseed
                     </h1>
                     <Badge className="bg-gradient-to-r from-blue-500 to-purple-500 text-white border-0 text-xs font-semibold px-2 py-1 animate-pulse">
-                      AI
+                      AI Wallet
                     </Badge>
                   </div>
-                  <p className="text-xs text-gray-500 font-medium -mt-1">Smart Receipt Manager</p>
+                  <p className="text-xs text-gray-500 font-medium -mt-1">Smarter Receipts. Smarter Wallet.</p>
                 </div>
               </Link>
 
@@ -142,9 +181,7 @@ export default function ClientLayout({
               <div className="grid md:grid-cols-4 gap-8">
                 <div className="md:col-span-1">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-                      <Sparkles className="w-6 h-6 text-white" />
-                    </div>
+                    <RaseedLogo className="w-12 h-12 drop-shadow-lg group-hover:scale-105 transition-transform duration-300" />
                     <div>
                       <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                         Raseed

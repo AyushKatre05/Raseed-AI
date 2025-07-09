@@ -99,7 +99,7 @@ export default function OnboardingPage() {
                   variant="secondary"
                   className="text-xs bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700"
                 >
-                  AI-Powered Setup
+                  AI-Powered Personalization
                 </Badge>
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function OnboardingPage() {
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-gray-700">Setup Progress</span>
+            <span className="text-sm font-medium text-gray-700">Personalization Progress</span>
             <span className="text-sm text-gray-500">{Math.round(progress)}% Complete</span>
           </div>
           <Progress value={progress} className="h-3" />
@@ -339,7 +339,7 @@ export default function OnboardingPage() {
           </Card>
         )}
 
-        {/* Step 5: Setup Complete */}
+  {/* Step 5: Personalization Complete */}
         {currentStep === 5 && (
           <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-0">
             <CardHeader className="text-center pb-8">
