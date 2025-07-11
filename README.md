@@ -117,6 +117,8 @@ Raseed is a next-generation, AI-powered platform for managing receipts, analyzin
 6. **Chat**: User asks questions, gets AI-powered answers
 7. **Notifications**: User receives smart alerts and tips
 
+![Architecture](architecture.png)
+
 ---
 
 ## 🌍 Inclusivity
